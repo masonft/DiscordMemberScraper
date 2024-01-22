@@ -49,7 +49,7 @@ try {
     prompt(`Collected ${memberIds.length} member IDs:`, JSON.stringify(memberIds));
 } catch (e) {
     console.log(JSON.stringify(memberIds));
-    console.log(`Collected ${memberIds.length} member IDs:`);
+    console.log(`Collected ${memberIds.length} member IDs.`);
 }
 ```
 
