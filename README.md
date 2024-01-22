@@ -53,6 +53,11 @@ try {
 }
 ```
 
+## 🚧 Known Issues
+
+- It will not scrape users that do not have an avatar.
+- Offline users can't be scraped if the offline list is hidden.
+
 ## ⚠️ Disclaimer
 
 This script is for educational and informational purposes only. Use it responsibly and ensure compliance with Discord's terms of service.
