@@ -1,10 +1,8 @@
 # DiscordMemberScraper
 
-## Overview
-
 This is a simple JavaScript script designed to scrape the IDs of members from a Discord server. The script is intended to be run either in the browser or the desktop app.
 
-## Usage
+## 🚀 Usage
 
 1. Open your web browser or Discord app.
 2. Navigate to the Discord server from which you want to scrape members.
@@ -13,19 +11,16 @@ This is a simple JavaScript script designed to scrape the IDs of members from a 
 5. Copy and paste the code below into the console.
 6. Press Enter to execute the script.
 
-## Code
+## 🧾 Code
 
 ```javascript
 const memberList = document.querySelector("div[class^='members__']");
-
-const wait = (ms) => new Promise(resolve => setTimeout(resolve, ms));
 
 let memberIds = [];
 
 function getStringBetween(sourceString, startString, endString) {
     const regexPattern = new RegExp(startString + '(.*?)' + endString);
     const match = sourceString.match(regexPattern);
-
     return match ? match[1] : null;
 }
 
@@ -35,20 +30,17 @@ while (true) {
 
     for (m of members) {
         const link = m.querySelector("img").src;
-
         if (!link.includes('avatars')) continue;
-
         if (link.includes('/users/')) memberIds.push(getStringBetween(link, '/users/', '/avatars'));
         else memberIds.push(getStringBetween(link, '/avatars/', '/'));
     }
 
     memberIds = [...new Set(memberIds)];
-
     if (jsonstr === JSON.stringify(memberIds)) break;
 
     memberList.scrollBy(0, 800);
 
-    await wait(500);
+    await new Promise(resolve => setTimeout(resolve, 500));
 }
 
 try {
@@ -59,6 +51,6 @@ try {
 }
 ```
 
-## Disclaimer
+## ⚠️ Disclaimer
 
 This script is for educational and informational purposes only. Use it responsibly and ensure compliance with Discord's terms of service.
