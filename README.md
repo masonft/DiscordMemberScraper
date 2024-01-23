@@ -1,4 +1,4 @@
-# DiscordMemberScraper
+# 🕵️‍♂️ DiscordMemberScraper
 
 This is a simple JavaScript script designed to scrape the IDs of members from a Discord server and output them in JSON format.
 
